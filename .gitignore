@@ -1,0 +1,13 @@
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.env
+*.log
+.DS_Store
+.vscode/
+app/static/generated/*
+exports/*
+!app/static/generated/.gitkeep
+!exports/.gitkeep

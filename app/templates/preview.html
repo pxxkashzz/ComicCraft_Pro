@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Preview · ComicCraft Pro{% endblock %}
+{% block content %}
+<section class="result-head">
+  <div>
+    <div class="eyebrow">COMIC GENERATED</div>
+    <h1>Your story is alive.</h1>
+    <p>{{ comic.panels|length }} panels generated for this session.</p>
+  </div>
+  <div class="result-actions">
+    <a class="secondary-btn" href="/">← New comic</a>
+    <a class="generate-btn small" href="{{ pdf_url }}">Download PDF <b>↓</b></a>
+  </div>
+</section>
+
+<section class="comic-grid">
+{% for panel in comic.panels %}
+  <article class="panel glass">
+    <div class="panel-top">
+      <span>0{{ panel.panel }}</span>
+      <strong>{{ panel.title }}</strong>
+      <em>{{ panel.image_status }}</em>
+    </div>
+    <img src="{{ panel.image_url }}" alt="{{ panel.title }}" loading="lazy">
+    <div class="panel-copy">
+      <p class="scene">{{ panel.scene_description }}</p>
+      <div class="copy-row"><b>Caption</b><span>{{ panel.caption }}</span></div>
+      <div class="copy-row"><b>Narration</b><span>{{ panel.narration }}</span></div>
+      <div class="dialogue">“{{ panel.dialogue }}”</div>
+    </div>
+  </article>
+{% endfor %}
+</section>
+
+<section class="bottom-cta glass">
+  <div><b>Want another story?</b><span>Change the world, tone or character and generate again.</span></div>
+  <a class="secondary-btn" href="/">Create another</a>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14">
+  <title>{% block title %}ComicCraft Pro{% endblock %}</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <header class="topbar glass">
+    <a class="brand" href="/">
+      <span class="brand-orb">✦</span>
+      <span>ComicCraft <b>Pro</b></span>
+    </a>
+    <div class="top-actions">
+      <span class="status-dot"><i></i> AI Ready</span>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☼</button>
+    </div>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>ComicCraft Pro · AI Comic Story Creator</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

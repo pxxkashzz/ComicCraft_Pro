@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Generation Error · ComicCraft Pro{% endblock %}
+{% block content %}
+<section class="error-card glass">
+  <div class="error-icon">!</div>
+  <div class="eyebrow">GENERATION ERROR</div>
+  <h1>Something stopped the generation.</h1>
+  <p>{{ error }}</p>
+  <div class="error-help">
+    <b>Check:</b>
+    <span>GEMINI_API_KEY is set in your local .env or Render Environment Variables.</span>
+    <span>The configured Gemini models are available for your API key.</span>
+  </div>
+  <a class="generate-btn small" href="/">Try again ↗</a>
+</section>
+{% endblock %}

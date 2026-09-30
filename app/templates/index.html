@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Create · ComicCraft Pro{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="eyebrow">NEXT-GEN STORY STUDIO</div>
+  <h1>Turn an idea into a<br><span>living comic.</span></h1>
+  <p>Write your concept. Choose your world. ComicCraft builds a five-panel story, dialogue and artwork with Gemini.</p>
+</section>
+
+<section class="workspace glass">
+  <div class="workspace-head">
+    <div>
+      <span class="mini-label">CREATE MODE</span>
+      <h2>Build your comic</h2>
+    </div>
+    <span class="chip">5 PANELS</span>
+  </div>
+
+  <form action="/generate" method="post" id="comicForm">
+    <div class="field full">
+      <label>Story prompt</label>
+      <textarea name="story_prompt" required placeholder="A brave fox discovers a hidden city beneath an enchanted forest..."></textarea>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Main character</label>
+        <input name="character_name" required placeholder="Arin">
+      </div>
+      <div class="field">
+        <label>Setting</label>
+        <input name="setting" required placeholder="Cyberpunk Chennai">
+      </div>
+      <div class="field">
+        <label>Story tone</label>
+        <select name="tone">
+          <option>Epic</option>
+          <option>Funny</option>
+          <option>Dramatic</option>
+          <option>Light-hearted</option>
+          <option>Mysterious</option>
+          <option>Poetic</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Art style</label>
+        <select name="art_style">
+          <option>Anime cinematic</option>
+          <option>Comic book</option>
+          <option>Futuristic concept art</option>
+          <option>Pixel art</option>
+          <option>Realistic graphic novel</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="generate-btn" type="submit">
+      <span>Generate Comic</span><b>↗</b>
+    </button>
+  </form>
+
+  <div class="trust-row">
+    <span>⚡ Fast AI pipeline</span>
+    <span>◈ Gemini powered</span>
+    <span>▣ PDF export</span>
+    <span>⌁ Mobile ready</span>
+  </div>
+</section>
+{% endblock %}
